@@ -1,0 +1,16 @@
+﻿<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>BuildAddons</id>
+    <version>1.0.0</version>
+    <authors>Stephen Phillips</authors>
+    <owners>Stephen Phillips</owners>
+    <licenseUrl>https://github.com/Korthax/BuildAddons/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/Korthax/BuildAddons</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Provides a number of custom msbuild tasks.</description>
+    <copyright>Copyright 2016</copyright>
+    <tags>C# BuildAddons MSBuild Tasks</tags>
+    <dependencies />
+  </metadata>
+</package>
