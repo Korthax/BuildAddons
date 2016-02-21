@@ -1,11 +1,11 @@
-# TableQueryParser #
+# BuildAddons #
 
-TableQueryParser provides extension methods to the Microsoft Azure TableQuery class which allow it to be run against in-memory objects.
+Adds a number of custom ms build tasks.
 
 ## License ##
 
-TableQueryParser is released under the [MIT license](https://github.com/Korthax/TableQueryParser/blob/master/LICENSE.md).
+BuildAddons is released under the [MIT license](https://github.com/Korthax/BuildAddons/blob/master/LICENSE.md).
 
 ## Contributors ##
 
-TableQueryParser was created by [Stephen Phillips](https://github.com/Korthax).
+BuildAddons was created by [Stephen Phillips](https://github.com/Korthax).
