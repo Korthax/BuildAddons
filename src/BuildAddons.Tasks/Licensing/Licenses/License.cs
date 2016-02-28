@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
+using BuildAddons.Tasks.Helpers.Files;
 
 namespace BuildAddons.Tasks.Licensing.Licenses
 {
@@ -9,20 +9,21 @@ namespace BuildAddons.Tasks.Licensing.Licenses
         private const string Footer = "// *********************************************************************************";
         private const string HeaderStart = "// ******************** Last Updated: ";
         private const string HeaderEnd = " *********************";
+        private const string Comment = "// ";
 
         private readonly List<string> _license;
         private readonly string _header;
-        
-        public static ILicense From(FileInfo fileInfo, string[] license)
+
+        public static ILicense NewFrom(IFileInfo fileInfo, string[] license)
         {
             var completeLicense = new List<string> { string.Format("{0}{1}{2}", HeaderStart, fileInfo.LastWriteTimeUtc.ToString("yyyy/MM/dd HH:mm:ss.ff"), HeaderEnd) };
-            completeLicense.AddRange(license);
+            completeLicense.AddRange(license.Select(x => string.Format("{0}{1}", Comment, x)));
             completeLicense.Add(Footer);
 
             return new License(completeLicense[0], completeLicense);
         }
 
-        public static License From(string[] file)
+        public static License ExistingFrom(string[] file)
         { 
             var license = new List<string>();
             foreach(var line in file)

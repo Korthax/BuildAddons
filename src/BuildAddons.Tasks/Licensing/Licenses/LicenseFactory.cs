@@ -15,7 +15,7 @@ namespace BuildAddons.Tasks.Licensing.Licenses
         public ILicense For(string[] file)
         {
             if (License.ContainedWithin(file))
-                return License.From(file);
+                return License.ExistingFrom(file);
 
             if (UnknownLicense.ContainedWithin(file))
                 return UnknownLicense.From(file);
@@ -29,7 +29,7 @@ namespace BuildAddons.Tasks.Licensing.Licenses
                 return new NoLicense();
 
             var lines = _fileReader.ReadAllLines(fileInfo.FullName);
-            return lines.Length == 0 ? new NoLicense() : License.From(fileInfo, lines);
+            return lines.Length == 0 ? new NoLicense() : License.NewFrom(new FileInfoContainer(fileInfo), lines);
         }
     }
 }

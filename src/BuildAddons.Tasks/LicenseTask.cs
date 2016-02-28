@@ -11,10 +11,10 @@ namespace BuildAddons.Tasks
     public class LicenseTask : Task
     {
         [Required]
-        public string SourceDirectory { get; set; }
+        public string ProjectDirectory { get; set; }
 
         [Required]
-        public string LicenseFilePath { get; set; }
+        public string LicenseFile { get; set; }
 
         private readonly SourceFileFactory _sourceFileFactory;
         private readonly LicenseFactory _licenseFactory;
@@ -29,8 +29,8 @@ namespace BuildAddons.Tasks
         {
             try
             {
-                var license = _licenseFactory.For(new FileInfo(LicenseFilePath));
-                foreach (var fileInfo in FileFinder.Find(SourceDirectory, new FileFinderOptions { Includes = new[] { ".cs" }, Excludes = new[] { @"\bin", @"\obj" } }))
+                var license = _licenseFactory.For(new FileInfo(LicenseFile));
+                foreach (var fileInfo in FileFinder.Find(ProjectDirectory, new FileFinderOptions { Includes = new[] { ".cs" }, Excludes = new[] { @"\bin", @"\obj" } }))
                 {
                     _sourceFileFactory.From(fileInfo)
                         .Add(license)

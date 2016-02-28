@@ -1,7 +1,7 @@
 using BuildAddons.Tasks.Licensing.Licenses;
 using NUnit.Framework;
 
-namespace BuildAddons.Tasks.Tests.Licensing.Licenses.GivenNoLicense
+namespace BuildAddons.Tasks.Tests.Licensing.Licenses.GivenNoExistingLicense
 {
     [TestFixture]
     public class WhenAddingALicenseToAFile
@@ -9,13 +9,7 @@ namespace BuildAddons.Tasks.Tests.Licensing.Licenses.GivenNoLicense
         [Test]
         public void ThenTheFileIsUnchanged()
         {
-            string[] file =
-            {
-                "// License text",
-                "using BuildAddons.Tasks.License.Licenses;"
-            };
-
-            var subject = UnknownLicense.From(file);
+            var subject = new NoLicense();
             var result = subject.AddTo(new[] { "using NUnit.Framework;" });
 
             Assert.That(result, Is.EqualTo(new[] { "using NUnit.Framework;" }));

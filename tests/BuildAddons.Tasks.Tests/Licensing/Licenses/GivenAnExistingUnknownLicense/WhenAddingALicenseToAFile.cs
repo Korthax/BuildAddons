@@ -1,7 +1,7 @@
 using BuildAddons.Tasks.Licensing.Licenses;
 using NUnit.Framework;
 
-namespace BuildAddons.Tasks.Tests.Licensing.Licenses.GivenAnUnknownLicense
+namespace BuildAddons.Tasks.Tests.Licensing.Licenses.GivenAnExistingUnknownLicense
 {
     [TestFixture]
     public class WhenAddingALicenseToAFile

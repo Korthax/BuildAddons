@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Helpers\Files\FileFinder.cs" />
     <Compile Include="Helpers\Files\FileFinderOptions.cs" />
+    <Compile Include="Helpers\Files\FileInfoContainer.cs" />
     <Compile Include="Helpers\Files\IFileReader.cs" />
     <Compile Include="Helpers\Files\IFileWriter.cs" />
     <Compile Include="LicenseTask.cs" />
@@ -58,9 +59,6 @@
     <Compile Include="Licensing\Source\SourceFileWriter.cs" />
     <Compile Include="Licensing\Source\UnchangedSource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="BuildAddons.nuspec" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <UsingTask TaskName="BuildAddons.Tasks.LicenseTask" AssemblyFile="bin\Debug\BuildAddons.Tasks.dll" />

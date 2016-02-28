@@ -9,8 +9,11 @@
     <projectUrl>https://github.com/Korthax/BuildAddons</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Provides a number of custom msbuild tasks.</description>
-    <copyright>Copyright 2016</copyright>
-    <tags>C# BuildAddons MSBuild Tasks</tags>
-    <dependencies />
+    <copyright>Copyright c Stephen Phillips.</copyright>
+    <tags>BuildAddons MSBuild Tasks License</tags>
   </metadata>
+    <files>
+      <file src="..\src\BuildAddons.Tasks\bin\Release\BuildAddons.Tasks.dll" target="build" />
+      <file src="BuildAddons.targets" target="build" />
+    </files>
 </package>

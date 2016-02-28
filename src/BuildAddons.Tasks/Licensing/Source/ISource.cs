@@ -1,4 +1,3 @@
-using System.IO;
 using BuildAddons.Tasks.Licensing.Licenses;
 
 namespace BuildAddons.Tasks.Licensing.Source

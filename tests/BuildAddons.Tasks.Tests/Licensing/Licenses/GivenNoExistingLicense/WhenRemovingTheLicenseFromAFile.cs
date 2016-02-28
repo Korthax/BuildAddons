@@ -1,7 +1,7 @@
 using BuildAddons.Tasks.Licensing.Licenses;
 using NUnit.Framework;
 
-namespace BuildAddons.Tasks.Tests.Licensing.Licenses.GivenALicense
+namespace BuildAddons.Tasks.Tests.Licensing.Licenses.GivenNoExistingLicense
 {
     [TestFixture]
     public class WhenRemovingTheLicenseFromAFile
@@ -11,14 +11,10 @@ namespace BuildAddons.Tasks.Tests.Licensing.Licenses.GivenALicense
         {
             string[] file =
             {
-                "// ******************** Last Updated: 2016/02/21 14:38:00.00 *********************",
-                "// License text",
-                "// *********************************************************************************",
-                "",
                 "using BuildAddons.Tasks.License.Licenses;"
             };
 
-            var subject = License.From(file);
+            var subject = new NoLicense();
             var result = subject.RemoveFrom(file);
 
             Assert.That(result, Is.EqualTo(new[] { "using BuildAddons.Tasks.License.Licenses;" }));
