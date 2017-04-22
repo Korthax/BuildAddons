@@ -10,7 +10,7 @@ namespace BuildAddons.Tasks.Helpers.Files
 
     public class FileInfoContainer : IFileInfo
     {
-        public DateTimeOffset LastWriteTimeUtc { get { return _fileInfo.LastWriteTimeUtc; } }
+        public DateTimeOffset LastWriteTimeUtc => _fileInfo.LastWriteTimeUtc;
         private readonly FileInfo _fileInfo;
 
         public FileInfoContainer(FileInfo fileInfo)

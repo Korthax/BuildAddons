@@ -2,14 +2,16 @@
 <package >
   <metadata>
     <id>BuildAddons</id>
+    <title>BuildAddons</title>
     <version>1.0.0</version>
     <authors>Stephen Phillips</authors>
     <owners>Stephen Phillips</owners>
     <licenseUrl>https://github.com/Korthax/BuildAddons/blob/master/LICENSE.md</licenseUrl>
     <projectUrl>https://github.com/Korthax/BuildAddons</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Provides a number of custom msbuild tasks.</description>
-    <copyright>Copyright c Stephen Phillips.</copyright>
+    <description>Provides a number of custom nant tasks.</description>
+    <summary>Provides a number of custom nant tasks.</summary>
+    <copyright>Copyright (c) Steve Phillips 2017</copyright>
     <tags>BuildAddons MSBuild Tasks License</tags>
   </metadata>
     <files>

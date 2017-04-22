@@ -16,8 +16,8 @@ namespace BuildAddons.Tasks.Licensing.Licenses
 
         public static ILicense NewFrom(IFileInfo fileInfo, string[] license)
         {
-            var completeLicense = new List<string> { string.Format("{0}{1}{2}", HeaderStart, fileInfo.LastWriteTimeUtc.ToString("yyyy/MM/dd HH:mm:ss.ff"), HeaderEnd) };
-            completeLicense.AddRange(license.Select(x => string.Format("{0}{1}", Comment, x)));
+            var completeLicense = new List<string> { $"{HeaderStart}{fileInfo.LastWriteTimeUtc:yyyy/MM/dd HH:mm:ss.ff}{HeaderEnd}" };
+            completeLicense.AddRange(license.Select(x => $"{Comment}{x}"));
             completeLicense.Add(Footer);
 
             return new License(completeLicense[0], completeLicense);
@@ -69,6 +69,7 @@ namespace BuildAddons.Tasks.Licensing.Licenses
             var result = new List<string>();
             for (var i = _license.Count; i < file.Length; i++)
                 result.Add(file[i]);
+
             return result.SkipWhile(string.IsNullOrWhiteSpace).ToArray();
         }
     }

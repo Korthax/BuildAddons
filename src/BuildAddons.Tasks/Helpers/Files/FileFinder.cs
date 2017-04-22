@@ -18,7 +18,7 @@ namespace BuildAddons.Tasks.Helpers.Files
         private static void Scan(DirectoryInfo sourceDirectory, FileFinderOptions options, ICollection<FileInfo> result)
         {
             if(!sourceDirectory.Exists)
-                throw new Exception(string.Format("Source directory does not exist or could not be found: {0}", sourceDirectory));
+                throw new Exception($"Source directory does not exist or could not be found: {sourceDirectory}");
 
             var fileInfos = new List<FileInfo>();
             foreach (var fileInfo in sourceDirectory.GetFiles())
@@ -51,7 +51,7 @@ namespace BuildAddons.Tasks.Helpers.Files
                 }
                 catch (Exception exception)
                 {
-                    throw new Exception(string.Format("{0} failed to scan: {1}", file.FullName, exception.Message));
+                    throw new Exception($"{file.FullName} failed to scan: {exception.Message}");
                 }
             }
         }

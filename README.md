@@ -1,6 +1,15 @@
 # BuildAddons #
 
-Adds a number of custom ms build tasks.
+Adds a number of custom nant build tasks.
+
+## Nant Tasks
+
+* LicenseTask
+
+## General Notes
+**This is an initial version and not tested thoroughly**.
+
+I've made this library for my own use for some of my projects. Use at your own risk.
 
 ## License ##
 
